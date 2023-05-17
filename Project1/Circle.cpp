@@ -8,7 +8,7 @@ void Circle::draw()
 	pen = CreatePen(PS_SOLID, 1, RGB(0, 0, 0));
 	SelectObject(hdc, pen);
 	HBRUSH brush;
-	brush = CreateSolidBrush(RGB(238, 199, 19));
+	brush = CreateSolidBrush(color);
 	SelectObject(hdc, brush);
 	int x1 = x - r;
 	int y1 = y - r;

@@ -17,7 +17,7 @@ void Triangle::draw()
 	pen = CreatePen(PS_SOLID, 1, RGB(0, 0, 0));
 	SelectObject(hdc, pen);
 	HBRUSH brush;
-	brush = CreateSolidBrush(RGB(238, 199, 19));
+	brush = CreateSolidBrush(color);
 	SelectObject(hdc, brush);
 	if (x1<0 || y1<0 || x2 <0 || y2 > h ||x3>w) {
 		throw InvalidDataException("Фигура выходит за рамки окна!");

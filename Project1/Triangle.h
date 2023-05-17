@@ -7,7 +7,7 @@ class Triangle : public Figure
 private:
 	int a;
 public:
-	Triangle(int x, int y, int r, int a_) :Figure(x, y, r), a(a_)
+	Triangle(int x, int y, int r, int a_, COLORREF color) :Figure(x, y, r, color), a(a_)
 	{
 		if (a < 2 * r) throw InvalidLengthOfBase("Основание треугольника должно быть больше его диаметра");
 
