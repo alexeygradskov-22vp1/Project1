@@ -7,6 +7,7 @@ class Figure
 {
 protected:
 	int x, y, r;
+	int w, h;
 	HWND hwnd;
 	HDC hdc;
 public:

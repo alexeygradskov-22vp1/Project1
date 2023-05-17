@@ -1,9 +1,10 @@
 #include "ComplexFigure.h"
+#include "InvalidDataException.h"
 
 void ComplexFigure::draw()
 {
-	triangle->draw();
-	circle->draw();
+		triangle->draw();
+		circle->draw();
 }
 
 void ComplexFigure::hide()

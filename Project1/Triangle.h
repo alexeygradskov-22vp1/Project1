@@ -9,11 +9,18 @@ private:
 public:
 	Triangle(int x, int y, int r, int a_) :Figure(x, y, r), a(a_)
 	{
-		if (a < 2 * r) throw Errors();
+		if (a < 2 * r) throw InvalidLengthOfBase("Основание треугольника должно быть больше его диаметра");
 
 	}
 	void draw() override;
 	void hide() override;
-	void move(int, int) override;
-	class Errors {};
+	class InvalidLengthOfBase : public std::exception {
+	private:
+		std::string message; 
+	public:
+		InvalidLengthOfBase(const std::string& msg) : message(msg) {}
+		const char* what() const noexcept override {
+			return message.c_str();
+		}
+	};
 };

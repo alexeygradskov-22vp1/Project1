@@ -2,7 +2,8 @@
 #include <iostream>
 #include <stdio.h>
 #include "ComplexFigure.h"
-#include <deque>
+#include "Queue.h"
+#include "InvalidDataException.h"
 
 using namespace std;
 
@@ -15,30 +16,27 @@ int main()
 		SetConsoleTitle((LPCWSTR)L"22VP1_8_Figures");
 		setlocale(LC_ALL, "Ru");
 		Circle circle(100, 200, 50);
-		Triangle triangle(250, 250, 25, 60);
+		Triangle triangle(250, 250, 25, 1);
 		ComplexFigure figure(200, 400, 60, 200);
-		std::deque<Figure*> figures;
-		figures.push_back(&circle);
-		figures.push_back(&triangle);
-		for (int i = 0; i < figures.size(); i++)
-		{
-			figures[i]->draw();
-		}
+		Queue container;
+		container.enqueue(&circle);
+		container.enqueue(&triangle);
+		container.showAll();
 		Sleep(2000);
-		circle.hide();
-		Sleep(2000);
-		triangle.draw();
-		Sleep(2000);
-		triangle.hide();
-		Sleep(2000);
-		circle.move(200, 300);
+		container.hideAll();
 		figure.draw();
 		Sleep(2000);
-		figure.move(10,10);
+		figure.move(500, 500);
 	}
-	catch (Triangle::Errors)
+	catch (Triangle::InvalidLengthOfBase& ex)
 	{
-		cout << "Основание треугольника должно быть больше, чем его диаметр!\n";
+		cerr << ex.what()<<endl;
+		return 1;
+	}
+
+	catch (const InvalidDataException& ex)
+	{
+		cerr << ex.what()<<endl;
 		return 1;
 	}
 }
