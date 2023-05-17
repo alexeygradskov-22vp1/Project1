@@ -6,9 +6,6 @@
         return data.empty();
     }
 
-    size_t Queue::size() const {
-        return data.size();
-    }
 
     void Queue::enqueue(Figure* element) {
         data.push_back(element);
@@ -34,4 +31,12 @@
         for (auto figure : data) {
             figure->hide();
         }
+    }
+
+    void Queue::clear() {
+        std::cout << data.size();
+        while (!isEmpty()) {
+            data.pop_front();
+        }
+        std::cout << data.size();
     }

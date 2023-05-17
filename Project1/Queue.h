@@ -21,4 +21,5 @@ public:
     void showAll() const;
     //‘ункци€ пр€чет все фигуры
     void hideAll() const;
+    void clear();
 };

@@ -26,6 +26,7 @@ int main()
 		figure.draw();
 		Sleep(2000);
 		figure.move(100,100);
+		container.clear();
 	}
 	catch (Triangle::InvalidLengthOfBase& ex)
 	{
