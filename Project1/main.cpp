@@ -16,17 +16,16 @@ int main()
 		setlocale(LC_ALL, "Ru");
 		Circle circle(100, 200, 50, RGB(238, 199, 19));
 		Triangle triangle(250, 250, 25, 60, RGB(238, 199, 19));
-		ComplexFigure figure(350, 350, 60, 200, RGB(238, 199, 19));
+		ComplexFigure figure(500, 200, 60, 200, RGB(238, 199, 19));
 		Queue container;
 		container.enqueue(&circle);
 		container.enqueue(&triangle);
+		container.enqueue(&figure);
 		container.showAll();
 		Sleep(2000);
-		container.hideAll();
-		figure.draw();
 		Sleep(2000);
 		figure.move(100,100);
-		container.clear();
+		Sleep(2000);
 	}
 	catch (Triangle::InvalidLengthOfBase& ex)
 	{

@@ -34,9 +34,7 @@
     }
 
     void Queue::clear() {
-        std::cout << data.size();
         while (!isEmpty()) {
             data.pop_front();
         }
-        std::cout << data.size();
     }
