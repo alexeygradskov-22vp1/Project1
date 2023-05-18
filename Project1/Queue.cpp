@@ -2,39 +2,41 @@
 #include "Figure.h"
 #include "Queue.h"
 
-    bool Queue::isEmpty() const {
-        return data.empty();
-    }
+bool Queue::isEmpty() const {
+    return data.empty();
+}
 
 
-    void Queue::enqueue(Figure* element) {
-        data.push_back(element);
-    }
+void Queue::enqueue(Figure* element) {
+    data.push(element);
+}
 
-    Figure* Queue::dequeue() {
-        Figure* frontElement = data.front();
-        data.pop_front();
-        return frontElement;
-    }
+Figure* Queue::dequeue() {
+    Figure* frontElement = data.front();
+    data.pop();
+    return frontElement;
+}
 
-    Figure* Queue::front() const {
-        return data.front();
-    }
+Figure* Queue::front() const {
+    return data.front();
+}
 
-    void Queue::showAll() const{
-        for (auto figure : data) {
-            figure->draw();
-        }
-    }
+/* void Queue::showAll() const{
+     while (!isEmpty()) {
 
-    void Queue::hideAll() const {
-        for (auto figure : data) {
-            figure->hide();
-        }
-    }
+         data.pop();
 
-    void Queue::clear() {
-        while (!isEmpty()) {
-            data.pop_front();
-        }
+     }
+ }
+
+ void Queue::hideAll() const {
+     for (auto figure : data) {
+         figure->hide();
+     }
+ }*/
+
+void Queue::clear() {
+    while (!isEmpty()) {
+        data.pop();
     }
+}
