@@ -1,10 +1,11 @@
 #pragma once
 #include <queue>
+#include <deque>
 #include "Figure.h"
 
 class Queue {
 private:
-    std::queue<Figure*> data;  // двусторонняя очередь
+    std::queue<Figure*> data;  //очередь
 
 public:
     // Проверка, пуста ли очередь
@@ -16,8 +17,8 @@ public:
     // Получение элемента из начала очереди без его удаления
     Figure* front() const;
     //Отрисовка всех фигур
-    void showAll() const;
+    void showAll();
     //Функция прячет все фигуры
-    void hideAll() const;
+    void hideAll();
     void clear();
 };

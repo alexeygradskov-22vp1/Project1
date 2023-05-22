@@ -21,22 +21,25 @@ Figure* Queue::front() const {
     return data.front();
 }
 
-/* void Queue::showAll() const{
+ void Queue::showAll(){
      while (!isEmpty()) {
-
+         data.front()->draw();
          data.pop();
-
+         std::cout << "Фигуры из очереди отрисованы" << std::endl;
      }
  }
 
- void Queue::hideAll() const {
-     for (auto figure : data) {
-         figure->hide();
+ void Queue::hideAll() {
+     while (!isEmpty()) {
+         data.front()->hide();
+         data.pop();
+         std::cout << "Фигуры из очереди спрятаны" << std::endl;
      }
- }*/
+ }
 
 void Queue::clear() {
     while (!isEmpty()) {
         data.pop();
+        std::cout << "Контейнер очищен" << std::endl;
     }
 }
